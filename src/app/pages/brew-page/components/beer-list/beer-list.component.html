@@ -1,0 +1,19 @@
+<div class="brew-column">
+  <mat-form-field appearance="fill">
+    <mat-label>Brewer</mat-label>
+    <mat-select [value]="brewer" (selectionChange)="handleOnSelectChange($event.value)">
+      <mat-option *ngFor="let brewer of brewers" [value]="brewer">
+        {{brewer}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-list>
+    <p *ngIf="!brewer">Brewer is not selected !</p>
+    <p *ngIf="brewer && beers.length == 0">There are no beers for this brewer !</p>
+    <app-beer *ngFor="let beer of beers" [beerViewData]="generateBeerViewData(beer)"></app-beer>
+    <button *ngIf="beers.length < totalBeersCount"
+      mat-button color="primary"
+      (click)="loadMoreBeers()"
+      >Load more beers</button>
+  </mat-list>
+</div>

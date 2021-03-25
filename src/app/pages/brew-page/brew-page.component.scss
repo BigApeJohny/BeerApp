@@ -1,0 +1,19 @@
+#brew-page {
+  margin: 0 5vw;
+  height: 98vh;
+  padding-top: 2vh;
+  #brew-page-header {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 2vw;
+  }
+  #columns-container {
+    display: flex;
+    mat-form-field {
+      width: 100%;
+    }
+    app-beer-list {
+      width: 100%;
+    }
+  }
+}

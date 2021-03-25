@@ -1,0 +1,21 @@
+<div id="brew-page">
+  <div id="brew-page-header">
+    <h1>Beers lists</h1>
+    <button (click)="toggleShowSettingsDialog()" mat-mini-fab aria-label="Example icon button with a home icon">
+      <mat-icon>settings</mat-icon>
+    </button>
+  </div>
+  <div id="columns-container">
+    <app-beer-list
+      *ngFor="let selectList of brewerSelectColumns; let i = index"
+      [id]="i"
+      [beers]="selectList.beers"
+      [brewer]="selectList.activeBrewer"
+      [brewers]="selectList.brewers"
+      [totalBeersCount]="selectList.totalBeersCount"
+      (onSelectListChange)="onListBeerChange($event)"
+      (onLoadMoreBtnClick)="onLoadMoreBeers($event)"
+    >
+    </app-beer-list>
+  </div>
+</div>

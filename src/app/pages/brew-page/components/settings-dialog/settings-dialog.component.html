@@ -1,0 +1,22 @@
+<h1 mat-dialog-title>Settings</h1>
+<div mat-dialog-content>
+  <mat-slide-toggle [checked]="darkModeValue" (change)="handleOnToggleChange($event)">Dark mode</mat-slide-toggle>
+  <br>
+  <mat-form-field>
+    <mat-label>Beers per list</mat-label>
+    <input matInput [(ngModel)]="data.itemsPerList">
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Sort by:</mat-label>
+    <mat-select [(ngModel)]="data.sortOption.value" (selectionChange)="handleOnSelectChange($event.value)">
+      <mat-option *ngFor="let option of brewSortoptions" [value]="option.value">
+        {{option.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="handleCancelClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Save</button>
+</div>

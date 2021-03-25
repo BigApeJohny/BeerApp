@@ -1,0 +1,21 @@
+mat-card {
+  margin: auto;
+  margin-bottom: 20px;
+  width: 85%;
+  text-align: left;
+  .beer-card-content {
+    display: flex;
+    align-items: center;
+    .beer-card-img-wrapper {
+      width: 40px;
+      height: 40px;
+      margin-right: 20px;
+      cursor: pointer;
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 50%;
+      }
+    }
+  }
+}

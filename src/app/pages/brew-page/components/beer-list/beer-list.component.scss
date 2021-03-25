@@ -1,0 +1,11 @@
+.brew-column {
+  flex-grow: 1;
+  text-align: center;
+  mat-form-field {
+    width: 95%;
+  }
+  mat-list {
+    height: 80vh;
+    overflow: auto;
+  }
+}

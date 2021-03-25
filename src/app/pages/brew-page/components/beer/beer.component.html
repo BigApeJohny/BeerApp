@@ -1,0 +1,12 @@
+<mat-card>
+  <h2>{{beerViewData.name}}</h2>
+  <div class="beer-card-content">
+    <div class="beer-card-img-wrapper" (click)="openImageModal()">
+      <img [src]="beerViewData.imageUrl" onError="this.src='https://icons-for-free.com/iconfiles/png/512/beer-1320568024709964641.png'">
+    </div>
+    <div>
+      <strong>Price per litre: </strong>{{beerViewData.pricePerLitre}}<br>
+      <strong>Type: </strong>{{beerViewData.type}}
+    </div>
+  </div>
+</mat-card>
